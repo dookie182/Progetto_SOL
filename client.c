@@ -50,7 +50,7 @@ sa.sun_family = AF_UNIX;
 
 }
 
-	//Genero l'ID univoco (int 64 bit)
+	//Genero l'ID univoco (32 bit)
 
 	srand((unsigned int)time(0));
 	id = (uint32_t)rand()*getpid();

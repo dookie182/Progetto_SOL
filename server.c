@@ -29,6 +29,7 @@ long gettime();
 
 static int index;
 int pfd;
+
 int main(int argc, char* argv[]){
 
 int size,n; 
