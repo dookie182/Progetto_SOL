@@ -53,5 +53,5 @@ done
 
 echo "SECRET STIMATI CORRETTAMENTE: $CORRECT SU $TOT"
 
-awk -v jit="$ERR_TOT" -v tot="$TOT" 'BEGIN {print "ERRORE MEDIO: " (jit/tot) ; exit}'
+awk -v errt="$ERR_TOT" -v tot="$TOT" 'BEGIN {print "ERRORE MEDIO: " (errt/tot) ; exit}'
 

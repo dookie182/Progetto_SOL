@@ -7,6 +7,7 @@
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/time.h>
 
 
 #define UNIX_PATH_MAX 108
@@ -42,6 +43,20 @@ int* servers = malloc(p * sizeof(int));
 
 return servers;
 
+}
+
+//Funzione per calcolare il tempo in ms
+long gettime(){
+struct timeval tv;
+gettimeofday(&tv, NULL);
+unsigned long ret = tv.tv_usec;
+        ret /= 1000;
+        ret += (tv.tv_sec * 1000);
+return ret;
+}
+
+void cleanup(char* sockname){
+unlink(sockname);
 }
 
 static inline int readn(long fd, void *buf, size_t size) {

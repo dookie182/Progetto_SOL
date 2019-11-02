@@ -57,9 +57,11 @@ sa.sun_family = AF_UNIX;
 
 	//Genero il secret (1<secret<3000)
 
+	do{
 	srand((unsigned int)time(0));
 	secret = (unsigned int) (rand()*getpid()) % 3000;
-
+	}while(secret <= 0);
+	
 	SYSCALL(n,printf("CLIENT 0x%x SECRET %d\n",id,secret),"printf secret client");
 	fflush(stdout);
 

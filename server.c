@@ -21,12 +21,7 @@ static void gestore (int signum) {
 			
 }
 
-
-void cleanup(char* sockname);
 static void* worker(void* arg);
-long gettime();
-
-
 static int index;
 int pfd;
 
@@ -130,17 +125,3 @@ char* buff;
 	}
 }
 
-
-long gettime(){
-struct timeval tv;
-gettimeofday(&tv, NULL);
-unsigned long ret = tv.tv_usec;
-        ret /= 1000;
-        ret += (tv.tv_sec * 1000);
-return ret;
-}
-
-
-void cleanup(char* sockname){
-unlink(sockname);
-}

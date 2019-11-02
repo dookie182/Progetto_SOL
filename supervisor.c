@@ -142,6 +142,7 @@ fflush(stdout);
 				}
 				
 				if(sigquit == 1){
+					SYSCALL(n,close(pfd[0]),"Chiusura Lettura Pipe");
 					print_all(estimated_list, n_client,1);
 					free(msg);
 					if(estimated_list != NULL)
